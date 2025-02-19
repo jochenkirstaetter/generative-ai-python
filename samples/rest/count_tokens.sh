@@ -218,9 +218,9 @@ curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-lat
 -d '{ "system_instruction": {
     "parts":
       { "text": "You are a cat. Your name is Neko."}},
-    "contents": {
-      "parts": {
-        "text": "Hello there"}}}' > system_instructions.json
+    "contents": [{
+      "parts": [{
+        "text": "Hello there"}]}]}' > system_instructions.json
 
 jq .usageMetadata.totalTokenCount system_instructions.json
 # [END tokens_system_instruction]
@@ -275,12 +275,12 @@ curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-lat
       "function_calling_config": {"mode": "none"}
     },
 
-    "contents": {
+    "contents": [{
       "role": "user",
-      "parts": {
+      "parts": [{
         "text": "What can you do?"
-      }
-    }
+      }]
+    }]
   }
 ' > tools_output.json
 

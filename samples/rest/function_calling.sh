@@ -51,12 +51,12 @@ curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-lat
       "function_calling_config": {"mode": "none"}
     },
 
-    "contents": {
+    "contents": [{
       "role": "user",
-      "parts": {
+      "parts": [{
         "text": "What can you do?"
-      }
-    }
+      }]
+    }]
   }
 ') 2>/dev/null |sed -n '/"content"/,/"finishReason"/p'
 # [END function_calling]
